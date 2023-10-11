@@ -1,33 +1,60 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-.body {
+body {
   background: green;
   box-sizing: border-box;
 }
 .card {
-  display: inline-block;
+  text-align: center;
   background: white;
   margin: auto;
   height: 400px;
   width: 250px;
   font-size: 50px;
   padding: 20px;
-  padding-top: 180px;
-  border: 2px solid black;
+  padding-top: 150px;
+  border: 1px solid black;
   border-radius: 5px;
   position: relative;
 }
-&:before {
-  content: ♦;
+.card:before,
+.card:after {
+  content: "\2666";
   position: absolute;
-  top: 20px;
-  left: 20px;
   font-size: 80px;
 }
-&:after {
-  content: ♦;
-  position: absolute;
+
+.card:before {
+  top: 20px;
+  left: 20px;
+}
+
+.card:after {
   bottom: 20px;
   right: 20px;
-  font-size: 80px;
+  transform: rotate(180deg);
+}
+
+.card.spade:before,
+.card.spade:after {
+  content: "\2660"; /* espada */
+  color: black;
+}
+
+.card.heart:before,
+.card.heart:after {
+  content: "\2665"; /* corazon */
+  color: red;
+}
+
+.card.club:before,
+.card.club:after {
+  content: "\2663"; /* trebol */
+  color: black;
+}
+
+.card.diamond:before,
+.card.diamond:after {
+  content: "\2666"; /* diamantes */
+  color: red;
 }
